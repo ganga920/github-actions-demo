@@ -1,0 +1,16 @@
+name: Run src script on GitHub-hosted runner
+
+on: [push]
+
+jobs:
+  run-script:
+    runs-on: ubuntu-latest
+
+    steps:
+      - name: Checkout code
+        uses: actions/checkout@v3
+
+      - name: Run script from src
+        run: |
+          chmod +x src/run.sh
+          ./src/run.sh
